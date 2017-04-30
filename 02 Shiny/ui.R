@@ -1,56 +1,135 @@
 #ui.R
 require(shiny)
 require(shinydashboard)
+require(DT)
+require(plotly)
 
 dashboardPage(
   dashboardHeader(
   ),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Barchart1", tabName = "barchart1", icon = icon("dashboard")),
-      menuItem("Barchart2", tabName = "barchart2", icon = icon("dashboard")),
-      menuItem("Barchart3", tabName = "barchart3", icon = icon("dashboard"))
+      menuItem("Boxplots", tabName = "boxplots", icon = icon("dashboard")),
+      menuItem("Histograms", tabName = "histograms", icon = icon("dashboard")),
+      menuItem("ScatterPlots", tabName = "scatterplots", icon = icon("dashboard")),
+      menuItem("Crosstabs", tabName = "crosstabs", icon = icon("dashboard")),
+      menuItem("Barcharts", tabName = "barcharts", icon = icon("dashboard"))
     )
   ),
   dashboardBody(    
     tabItems(
-      tabItem(tabName = "barchart1",
+      tabItem(tabName = "boxplots",
               tabsetPanel(
-                tabPanel("Data1",  
-                         radioButtons("rb1", "Get data from:",
+                tabPanel("BoxplotData1",  
+                         radioButtons("bprb1", "Get data from:",
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
-                         actionButton(inputId = "click1",  label = "To get data, click here"),
+                         actionButton(inputId = "bpclick1",  label = "To get data, click here"),
                          hr(), # Add space after button.
-                         DT::dataTableOutput("data1")
+                         DT::dataTableOutput("bpdata1")
                 ),
-                tabPanel("Barchart1", "White = Average Birth Weight of a Race per State, Red = Average Birth Weight per State, and  Blue = (Average Birth Weight of a Race per State - Average Birth Weight per State)", plotOutput("plot1", height=1500))
+                tabPanel("Boxplot1", "Info", plotOutput("bpplot1", height=1500))
               )
       ),
-      tabItem(tabName = "barchart2",
+      tabItem(tabName = "histograms",
               tabsetPanel(
-                tabPanel("Data2",  
-                         radioButtons("rb2", "Get data from:",
+                tabPanel("HistogramData1",  
+                         radioButtons("hgrb1", "Get data from:",
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
-                         actionButton(inputId = "click2",  label = "To get data, click here"),
+                         actionButton(inputId = "hgclick1",  label = "To get data, click here"),
                          hr(), # Add space after button.
-                         DT::dataTableOutput("data2")
+                         DT::dataTableOutput("hgdata1")
                 ),
-                tabPanel("Barchart2", "White = State id (from Natality table), Red = Median Age of that State (from Census2015 table)", plotOutput("plot2", height=700))
+                tabPanel("Histogram1", "Info", plotOutput("hgplot1", height=700))
               )
       ),
-      tabItem(tabName = "barchart3",
+      tabItem(tabName = "scatterplots",
               tabsetPanel(
-                tabPanel("Data3",  
-                         radioButtons("rb3", "Get data from:",
+                tabPanel("ScatterplotData1",  
+                         radioButtons("sprb1", "Get data from:",
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
-                         actionButton(inputId = "click3",  label = "To get data, click here"),
+                         actionButton(inputId = "spclick1",  label = "To get data, click here"),
                          hr(), # Add space after button.
-                         DT::dataTableOutput("data3")
+                         DT::dataTableOutput("spdata1")
                 ),
-                tabPanel("Barchart3", "Number of births by race for the high median_age states", plotOutput("plot3", height=700))
+                tabPanel("Scatterplot1", "Info", plotOutput("spplot1", height=700))
+              )
+      ),
+      tabItem(tabName = "crosstabs",
+              tabsetPanel(
+                tabPanel("CrosstabData1",  
+                         radioButtons("ctrb1", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         sliderInput("KPI1", "KPI_Low1:", 
+                                     min = 0, max = .78,  value = .78),
+                         sliderInput("KPI2", "KPI_Medium1:", 
+                                     min = .78, max = .82,  value = .82),
+                         actionButton(inputId = "ctclick1",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("ctdata1")
+                ),
+                tabPanel("CrossTab1: Average Birth Weight per State by Race", "This graph shows average birth weight per state by race. It is colored by the calculated field (KPI): AVG(average birth weight)/4000", plotlyOutput("ctplot1", height=1000)),
+                tabPanel("CrosstabData2",  
+                         radioButtons("ctrb2", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         sliderInput("KPI3", "KPI_Low2:", 
+                                     min = 0, max = .78,  value = .78),
+                         sliderInput("KPI4", "KPI_Medium2:", 
+                                     min = .78, max = .82,  value = .82),
+                         actionButton(inputId = "ctclick2",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("ctdata2")
+                ),
+                tabPanel("CrossTab2: 4 Highest Birth Weight States", "This graph shows average birth weight per state by race for the 4 highest birth weight states. It is colored by the calculated field (KPI): AVG(average birth weight)/4000", plotlyOutput("ctplot2", height=1000)),
+                tabPanel("CrosstabData3",  
+                         radioButtons("ctrb3", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         sliderInput("KPI5", "KPI_Low3:", 
+                                     min = 0, max = 34.7,  value = 34.7),
+                         sliderInput("KPI6", "KPI_Medium3:", 
+                                     min = 34.7, max = 39.3,  value = 39.3),
+                         actionButton(inputId = "ctclick3",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("ctdata3")
+                ),
+                tabPanel("CrossTab3: Sum of Births with Median Age Parameter", "This graph shows the sum of births for each race per state, colored by the median age of each state parameterized into low, med, and high", plotlyOutput("ctplot3", height=1000))
+              )
+      ),
+      tabItem(tabName = "barcharts",
+              tabsetPanel(
+                tabPanel("Barchart1Data",  
+                         radioButtons("bcrb1", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         actionButton(inputId = "bcclick1",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("bcdata1")
+                ),
+                tabPanel("Barchart1: Birth Weights", "White = Average Birth Weight of a Race per State, Red = Average Birth Weight per State, and  Blue = (Average Birth Weight of a Race per State - Average Birth Weight per State)", plotOutput("bcplot1", height=1800)),
+                tabPanel("Barchart2Data",  
+                         radioButtons("bcrb2", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         actionButton(inputId = "bcclick2",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("bcdata2")
+                ),
+                tabPanel("Barchart2: High Median Age States", "White = State id (from Natality table), Red = Median Age of that State (from Census2015 table)", plotlyOutput("bcplot2", height=700)),
+                tabPanel("Barchart3Data",  
+                         radioButtons("bcrb3", "Get data from:",
+                                      c("SQL" = "SQL",
+                                        "CSV" = "CSV"), inline=T),
+                         actionButton(inputId = "bcclick3",  label = "To get data, click here"),
+                         hr(), # Add space after button.
+                         DT::dataTableOutput("bcdata3")
+                ),
+                tabPanel("Barchart3: # of Births in High Median Age States", "Number of births by race for the high median_age states", plotlyOutput("bcplot3", height=700))
+                
               )
       )
     )
