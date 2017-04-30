@@ -1,0 +1,10 @@
+name: 02shiny
+title: 02Shiny
+account: kellyjennings
+server: shinyapps.io
+appId: 172528
+bundleId: 790691
+url: https://kellyjennings.shinyapps.io/02shiny/
+when: 1492315217.06218
+asMultiple: FALSE
+asStatic: FALSE

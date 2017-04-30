@@ -1,0 +1,11 @@
+name: project6
+title: project6
+account: kellyjennings
+server: shinyapps.io
+appId: 174883
+bundleId: 801617
+url: https://kellyjennings.shinyapps.io/project6/
+when: 1493050714.30557
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData
