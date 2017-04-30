@@ -842,7 +842,7 @@
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' name='Mother Age Histogram'>
+    <window class='worksheet' maximized='true' name='Mother Age Histogram'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -946,7 +946,7 @@
         </highlight>
       </viewpoint>
     </window>
-    <window class='worksheet' maximized='true' name='TreemapDrag'>
+    <window class='worksheet' name='TreemapDrag'>
       <cards>
         <edge name='left'>
           <strip size='160'>
