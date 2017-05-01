@@ -50,11 +50,12 @@ dashboardPage(
                          radioButtons("sprb1", "Get data from:",
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
+                         uiOutput("states2"), # See http://shiny.rstudio.com/gallery/dynamic-ui.html
                          actionButton(inputId = "spclick1",  label = "To get data, click here"),
                          hr(), # Add space after button.
                          DT::dataTableOutput("spdata1")
                 ),
-                tabPanel("Scatterplot1", "Info", plotOutput("spplot1", height=700))
+                tabPanel("Scatterplot1", "Median Age of a State vs Births", plotlyOutput("spplot1", height=700))
               )
       ),
       tabItem(tabName = "crosstabs",
@@ -119,7 +120,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("bcdata2")
                 ),
-                tabPanel("Barchart2: High Median Age States", "White = State id (from Natality table), Red = Median Age of that State (from Census2015 table)", plotlyOutput("bcplot2", height=700)),
+                tabPanel("Barchart2: High Median Age States", "Blue = State ID", plotlyOutput("bcplot2", height=700)),
                 tabPanel("Barchart3Data",  
                          radioButtons("bcrb3", "Get data from:",
                                       c("SQL" = "SQL",

@@ -25,6 +25,73 @@ shinyServer(function(input, output) {
   bconline1 = reactive({input$bcrb1})
   bconline2 = reactive({input$bcrb2})
   bconline3 = reactive({input$bcrb3})
+  # These widgets are for the scatterplots tab.
+  sponline1 = reactive({input$sprb1})
+  output$states2 <- renderUI({selectInput("selectedStates", "Choose Categories:", state_list, multiple = TRUE) })
+  
+  
+  
+  # The following query is for the select list in the scatterplot tab.
+  states = query(
+    data.world(propsfile = "www/.data.world"),
+    dataset="conneyc/s-17-dv-project-5", type="sql",
+    query="select distinct State as D, State as R
+    from Natality
+    order by 1"
+  ) # %>% View()
+  if(states[1] == "Server error") {
+    print("Getting States from csv")
+    file_path = "www/Natality.csv"
+    df <- readr::read_csv(file_path) 
+    tdf1 = df %>% dplyr::distinct(State) %>% arrange(State) %>% dplyr::rename(D = State)
+    tdf2 = df %>% dplyr::distinct(State) %>% arrange(State) %>% dplyr::rename(D = State)
+    states = bind_cols(tdf1, tdf2)
+  }
+  state_list <- as.list(states$D, states$R)
+  state_list <- append(list("All" = "All"), state_list)
+  
+  
+  # Begin Scatterplot Tab ------------------------------------------------------------------
+  spdf1 <- eventReactive(input$spclick1, {
+    if(input$selectedStates == 'All') state_list <- input$selectedStates
+    else state_list <- append(list("Skip" = "Skip"), input$selectedStates)
+    
+    if(sponline1() == "SQL") {
+      print("Getting from data.world")
+      tdf = query(
+        data.world(propsfile = "www/.data.world"),
+        dataset="conneyc/s-17-dv-project-5", type="sql",
+        query="select State as state, Births, Median_Age, Race
+        from Natality n join Census2015 c 
+        on n.State = c.AreaName
+        where ? = 'All' or State in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        queryParameters = state_list
+      )  #%>% View()
+    }
+    else {
+      print("Getting from csv")
+      file_path = "www/Natality.csv"
+      dfn <- readr::read_csv(file_path)
+      file_path2 = "www/Census2015.csv"
+      dfc <- readr::read_csv(file_path2)
+      df <- dplyr::left_join(dfn, dfc, by = c("State"="AreaName"))
+      df %>% dplyr::select(state = State, Births, Median_Age, Race) %>%
+        dplyr::filter(state %in% input$selectedStates | input$selectedStates == "All")
+    }
+  })
+  output$spdata1 <- renderDataTable({DT::datatable(spdf1(), rownames = FALSE,
+                                                 extensions = list(Responsive = TRUE, FixedHeader = TRUE)
+  )
+  })
+  output$spplot1 <- renderPlotly({ p <- ggplot(spdf1(), aes(x=Median_Age, y=Births)) +
+      theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5)) + 
+      theme(axis.text.y=element_text(size=12, hjust=0.5)) +
+      geom_point(aes(x=Median_Age, y = Births, colour = state, shape = Race))
+      ggplotly(p)
+  })
+  
+  # End Scatterplot Tab ___________________________________________________________
+  
   
   # Begin Crosstab1 Tab ------------------------------------------------------------------
   ctdf1 <- eventReactive(input$ctclick1, {
