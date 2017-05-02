@@ -1,0 +1,405 @@
+"State","State_Code","Gender","Gender_Code","Race","Births","Average_Birth_Weight","Average_Age_Mother"
+"Alabama",1,"Female","F","American Indian or Alaska Native",100,3202.42,26.97
+"Alabama",1,"Female","F","Asian or Pacific Islander",576,3112.14,30.59
+"Alabama",1,"Female","F","Black or African American",9116,2946.81,25.98
+"Alabama",1,"Female","F","White",19514,3227.79,27.42
+"Alabama",1,"Male","M","American Indian or Alaska Native",90,3317.1,26.49
+"Alabama",1,"Male","M","Asian or Pacific Islander",617,3222.24,30.57
+"Alabama",1,"Male","M","Black or African American",9313,3061.67,25.99
+"Alabama",1,"Male","M","White",20331,3344.87,27.39
+"Alaska",2,"Female","F","American Indian or Alaska Native",1179,3367.25,26.24
+"Alaska",2,"Female","F","Asian or Pacific Islander",565,3232.83,28.19
+"Alaska",2,"Female","F","Black or African American",243,3151.17,26.95
+"Alaska",2,"Female","F","White",3506,3356.13,28.55
+"Alaska",2,"Male","M","American Indian or Alaska Native",1236,3466.55,26.29
+"Alaska",2,"Male","M","Asian or Pacific Islander",549,3347.91,27.7
+"Alaska",2,"Male","M","Black or African American",266,3300.2,26.91
+"Alaska",2,"Male","M","White",3738,3491.22,28.6
+"Arizona",4,"Female","F","American Indian or Alaska Native",2620,3274.89,26.41
+"Arizona",4,"Female","F","Asian or Pacific Islander",1702,3139.28,30.61
+"Arizona",4,"Female","F","Black or African American",2468,3059.09,27.27
+"Arizona",4,"Female","F","White",34810,3245.87,27.94
+"Arizona",4,"Male","M","American Indian or Alaska Native",2696,3367.46,26.66
+"Arizona",4,"Male","M","Asian or Pacific Islander",1816,3206.54,30.65
+"Arizona",4,"Male","M","Black or African American",2627,3192.98,27.26
+"Arizona",4,"Male","M","White",36612,3360.19,27.93
+"Arkansas",5,"Female","F","American Indian or Alaska Native",178,3273.49,25.82
+"Arkansas",5,"Female","F","Asian or Pacific Islander",622,3111.04,28.84
+"Arkansas",5,"Female","F","Black or African American",3859,2954.78,25.35
+"Arkansas",5,"Female","F","White",14280,3230.26,26.98
+"Arkansas",5,"Male","M","American Indian or Alaska Native",175,3428.18,25.75
+"Arkansas",5,"Male","M","Asian or Pacific Islander",612,3167.42,29.3
+"Arkansas",5,"Male","M","Black or African American",3908,3070.68,25.3
+"Arkansas",5,"Male","M","White",15252,3353.79,26.81
+"California",6,"Female","F","American Indian or Alaska Native",1716,3294.68,27.66
+"California",6,"Female","F","Asian or Pacific Islander",38674,3145.24,31.96
+"California",6,"Female","F","Black or African American",14942,3103.8,27.98
+"California",6,"Female","F","White",184233,3266.08,29.02
+"California",6,"Male","M","American Indian or Alaska Native",1794,3363.26,27.71
+"California",6,"Male","M","Asian or Pacific Islander",41595,3238.02,32.01
+"California",6,"Male","M","Black or African American",15604,3197.35,27.87
+"California",6,"Male","M","White",193190,3375.2,29.02
+"Colorado",8,"Female","F","American Indian or Alaska Native",391,3176.63,27.1
+"Colorado",8,"Female","F","Asian or Pacific Islander",1509,3052.96,30.62
+"Colorado",8,"Female","F","Black or African American",1996,3029.43,27.86
+"Colorado",8,"Female","F","White",28652,3154.93,29.09
+"Colorado",8,"Male","M","American Indian or Alaska Native",412,3223.31,27.03
+"Colorado",8,"Male","M","Asian or Pacific Islander",1464,3106.13,30.62
+"Colorado",8,"Male","M","Black or African American",2053,3144.47,27.87
+"Colorado",8,"Male","M","White",30104,3275.38,29.02
+"Connecticut",9,"Female","F","American Indian or Alaska Native",45,3293.84,28.84
+"Connecticut",9,"Female","F","Asian or Pacific Islander",1263,3138.36,31.53
+"Connecticut",9,"Female","F","Black or African American",2422,3076.46,28.65
+"Connecticut",9,"Female","F","White",13811,3261.97,30.17
+"Connecticut",9,"Male","M","American Indian or Alaska Native",52,3271.92,27.81
+"Connecticut",9,"Male","M","Asian or Pacific Islander",1234,3201.44,31.53
+"Connecticut",9,"Male","M","Black or African American",2566,3198.25,28.47
+"Connecticut",9,"Male","M","White",14353,3381.41,30.14
+"Delaware",10,"Female","F","American Indian or Alaska Native",11,2876.45,26.09
+"Delaware",10,"Female","F","Asian or Pacific Islander",320,3170.15,30.81
+"Delaware",10,"Female","F","Black or African American",1582,3047.1,27.53
+"Delaware",10,"Female","F","White",3687,3249.46,28.99
+"Delaware",10,"Male","M","Asian or Pacific Islander",355,3216.15,30.81
+"Delaware",10,"Male","M","Black or African American",1552,3155.33,27.47
+"Delaware",10,"Male","M","White",3654,3385.54,28.95
+"District of Columbia",11,"Female","F","Asian or Pacific Islander",244,3249.36,33.05
+"District of Columbia",11,"Female","F","Black or African American",2432,3041.13,27.51
+"District of Columbia",11,"Female","F","White",1996,3248.06,32.66
+"District of Columbia",11,"Male","M","Asian or Pacific Islander",255,3293.46,32.94
+"District of Columbia",11,"Male","M","Black or African American",2570,3166.41,27.64
+"District of Columbia",11,"Male","M","White",2065,3405.69,32.69
+"Florida",12,"Female","F","American Indian or Alaska Native",174,3301.72,27.74
+"Florida",12,"Female","F","Asian or Pacific Islander",3665,3116.15,31.01
+"Florida",12,"Female","F","Black or African American",26528,3028.16,27.51
+"Florida",12,"Female","F","White",78800,3241.94,28.83
+"Florida",12,"Male","M","American Indian or Alaska Native",199,3409.34,27.24
+"Florida",12,"Male","M","Asian or Pacific Islander",3938,3215.52,31.07
+"Florida",12,"Male","M","Black or African American",27171,3139.39,27.44
+"Florida",12,"Male","M","White",83794,3354.63,28.8
+"Georgia",13,"Female","F","American Indian or Alaska Native",142,3176.2,27.62
+"Georgia",13,"Female","F","Asian or Pacific Islander",3163,3131.49,30.64
+"Georgia",13,"Female","F","Black or African American",23461,3004.09,27.13
+"Georgia",13,"Female","F","White",37617,3259.39,28.34
+"Georgia",13,"Male","M","American Indian or Alaska Native",156,3365.18,28.18
+"Georgia",13,"Male","M","Asian or Pacific Islander",3305,3236.12,30.9
+"Georgia",13,"Male","M","Black or African American",24273,3108.84,27.14
+"Georgia",13,"Male","M","White",39287,3373.28,28.29
+"Hawaii",15,"Female","F","American Indian or Alaska Native",14,3401.14,27.71
+"Hawaii",15,"Female","F","Asian or Pacific Islander",5555,3144.64,29.2
+"Hawaii",15,"Female","F","Black or African American",305,3133.43,27.37
+"Hawaii",15,"Female","F","White",3187,3286.73,29.07
+"Hawaii",15,"Male","M","American Indian or Alaska Native",21,3462.76,26
+"Hawaii",15,"Male","M","Asian or Pacific Islander",5888,3210.33,29.29
+"Hawaii",15,"Male","M","Black or African American",315,3151.61,28.13
+"Hawaii",15,"Male","M","White",3135,3405.75,29.02
+"Idaho",16,"Female","F","American Indian or Alaska Native",202,3233.19,26.3
+"Idaho",16,"Female","F","Asian or Pacific Islander",249,3137.29,29.11
+"Idaho",16,"Female","F","Black or African American",154,3167.16,27.03
+"Idaho",16,"Female","F","White",10723,3250.25,27.74
+"Idaho",16,"Male","M","American Indian or Alaska Native",204,3305.32,25.67
+"Idaho",16,"Male","M","Asian or Pacific Islander",267,3300.05,29.5
+"Idaho",16,"Male","M","Black or African American",133,3178.9,26.8
+"Idaho",16,"Male","M","White",10895,3372.86,27.84
+"Illinois",17,"Female","F","American Indian or Alaska Native",101,3317.7,28.28
+"Illinois",17,"Female","F","Asian or Pacific Islander",4996,3110.79,31.38
+"Illinois",17,"Female","F","Black or African American",13797,3012.41,26.48
+"Illinois",17,"Female","F","White",58186,3267.78,29.32
+"Illinois",17,"Male","M","American Indian or Alaska Native",104,3414.96,28.79
+"Illinois",17,"Male","M","Asian or Pacific Islander",5226,3215.5,31.42
+"Illinois",17,"Male","M","Black or African American",14262,3119.4,26.39
+"Illinois",17,"Male","M","White",61444,3393.01,29.29
+"Indiana",18,"Female","F","American Indian or Alaska Native",65,3257.66,26.77
+"Indiana",18,"Female","F","Asian or Pacific Islander",1210,3180.41,30.18
+"Indiana",18,"Female","F","Black or African American",5199,3038.36,26.09
+"Indiana",18,"Female","F","White",34343,3255.81,27.58
+"Indiana",18,"Male","M","American Indian or Alaska Native",55,3535.09,26.78
+"Indiana",18,"Male","M","Asian or Pacific Islander",1313,3230.56,30.11
+"Indiana",18,"Male","M","Black or African American",5457,3165.19,26.16
+"Indiana",18,"Male","M","White",36398,3376.82,27.65
+"Iowa",19,"Female","F","American Indian or Alaska Native",107,3339.48,25.52
+"Iowa",19,"Female","F","Asian or Pacific Islander",648,3145.78,29.77
+"Iowa",19,"Female","F","Black or African American",1237,3100.84,26.49
+"Iowa",19,"Female","F","White",17231,3307.54,28.26
+"Iowa",19,"Male","M","American Indian or Alaska Native",135,3467.27,26.84
+"Iowa",19,"Male","M","Asian or Pacific Islander",716,3282.73,29.65
+"Iowa",19,"Male","M","Black or African American",1360,3240.26,26.56
+"Iowa",19,"Male","M","White",18048,3443.88,28.24
+"Kansas",20,"Female","F","American Indian or Alaska Native",158,3263.09,25.57
+"Kansas",20,"Female","F","Asian or Pacific Islander",735,3115.53,30.02
+"Kansas",20,"Female","F","Black or African American",1508,3056.83,26.2
+"Kansas",20,"Female","F","White",16772,3272.31,27.95
+"Kansas",20,"Male","M","American Indian or Alaska Native",172,3434.37,26.02
+"Kansas",20,"Male","M","Asian or Pacific Islander",748,3251.55,29.73
+"Kansas",20,"Male","M","Black or African American",1582,3153.71,26.2
+"Kansas",20,"Male","M","White",17479,3395.36,27.85
+"Kentucky",21,"Female","F","American Indian or Alaska Native",45,3272.98,24.82
+"Kentucky",21,"Female","F","Asian or Pacific Islander",632,3162.73,30.34
+"Kentucky",21,"Female","F","Black or African American",2748,3049.08,26.16
+"Kentucky",21,"Female","F","White",23922,3227.36,27.06
+"Kentucky",21,"Male","M","American Indian or Alaska Native",43,3354.28,25.77
+"Kentucky",21,"Male","M","Asian or Pacific Islander",683,3243.43,30.38
+"Kentucky",21,"Male","M","Black or African American",2759,3149.58,26.25
+"Kentucky",21,"Male","M","White",25139,3344.45,27.06
+"Louisiana",22,"Female","F","American Indian or Alaska Native",186,3176.4,25.75
+"Louisiana",22,"Female","F","Asian or Pacific Islander",730,3139.44,30.53
+"Louisiana",22,"Female","F","Black or African American",12436,2964.06,25.93
+"Louisiana",22,"Female","F","White",18468,3215.79,27.7
+"Louisiana",22,"Male","M","American Indian or Alaska Native",206,3325,26.75
+"Louisiana",22,"Male","M","Asian or Pacific Islander",768,3214.89,30.17
+"Louisiana",22,"Male","M","Black or African American",12565,3084.07,25.89
+"Louisiana",22,"Male","M","White",19333,3333.77,27.67
+"Maine",23,"Female","F","American Indian or Alaska Native",59,3322.22,27.92
+"Maine",23,"Female","F","Asian or Pacific Islander",82,3228.49,30.74
+"Maine",23,"Female","F","Black or African American",226,3160.57,28.9
+"Maine",23,"Female","F","White",5710,3306.09,28.42
+"Maine",23,"Male","M","American Indian or Alaska Native",84,3446.93,25.88
+"Maine",23,"Male","M","Asian or Pacific Islander",104,3265.38,30.83
+"Maine",23,"Male","M","Black or African American",247,3273.28,29.45
+"Maine",23,"Male","M","White",6095,3426.96,28.43
+"Maryland",24,"Female","F","American Indian or Alaska Native",129,3268.59,28.95
+"Maryland",24,"Female","F","Asian or Pacific Islander",2866,3133.41,31.91
+"Maryland",24,"Female","F","Black or African American",12363,3089.26,28.48
+"Maryland",24,"Female","F","White",20677,3283.11,29.8
+"Maryland",24,"Male","M","American Indian or Alaska Native",150,3287.59,29.38
+"Maryland",24,"Male","M","Asian or Pacific Islander",2983,3233.2,31.53
+"Maryland",24,"Male","M","Black or African American",12654,3196.72,28.53
+"Maryland",24,"Male","M","White",21794,3403.96,29.74
+"Massachusetts",25,"Female","F","American Indian or Alaska Native",68,3229.21,27.37
+"Massachusetts",25,"Female","F","Asian or Pacific Islander",3252,3139.6,31.7
+"Massachusetts",25,"Female","F","Black or African American",4543,3127.74,29.43
+"Massachusetts",25,"Female","F","White",26907,3287.45,30.51
+"Massachusetts",25,"Male","M","American Indian or Alaska Native",73,3407.85,28.99
+"Massachusetts",25,"Male","M","Asian or Pacific Islander",3461,3233.19,31.53
+"Massachusetts",25,"Male","M","Black or African American",4745,3264.96,29.29
+"Massachusetts",25,"Male","M","White",28443,3409.78,30.54
+"Michigan",26,"Female","F","American Indian or Alaska Native",392,3238.23,26.25
+"Michigan",26,"Female","F","Asian or Pacific Islander",2068,3127.5,30.77
+"Michigan",26,"Female","F","Black or African American",11058,3008.09,26.08
+"Michigan",26,"Female","F","White",42045,3283.2,28.58
+"Michigan",26,"Male","M","American Indian or Alaska Native",394,3381.13,27.07
+"Michigan",26,"Male","M","Asian or Pacific Islander",2226,3217.69,30.8
+"Michigan",26,"Male","M","Black or African American",11336,3118.08,26.07
+"Michigan",26,"Male","M","White",43793,3401.92,28.54
+"Minnesota",27,"Female","F","American Indian or Alaska Native",674,3281.97,26.65
+"Minnesota",27,"Female","F","Asian or Pacific Islander",2773,3148.59,29.34
+"Minnesota",27,"Female","F","Black or African American",4079,3172.14,28.56
+"Minnesota",27,"Female","F","White",26381,3340.81,29.55
+"Minnesota",27,"Male","M","American Indian or Alaska Native",741,3417.76,26.26
+"Minnesota",27,"Male","M","Asian or Pacific Islander",2886,3245.01,29.11
+"Minnesota",27,"Male","M","Black or African American",4274,3300.24,28.39
+"Minnesota",27,"Male","M","White",28026,3462.9,29.61
+"Mississippi",28,"Female","F","American Indian or Alaska Native",130,3298.11,25.75
+"Mississippi",28,"Female","F","Asian or Pacific Islander",274,3176.55,30.43
+"Mississippi",28,"Female","F","Black or African American",8286,2926.51,25.44
+"Mississippi",28,"Female","F","White",10091,3206.93,27.1
+"Mississippi",28,"Male","M","American Indian or Alaska Native",129,3493.81,26.17
+"Mississippi",28,"Male","M","Asian or Pacific Islander",285,3212.8,30.54
+"Mississippi",28,"Male","M","Black or African American",8560,3057.65,25.62
+"Mississippi",28,"Male","M","White",10639,3333.32,27.04
+"Missouri",29,"Female","F","American Indian or Alaska Native",169,3268.64,27.28
+"Missouri",29,"Female","F","Asian or Pacific Islander",1015,3158.77,30.45
+"Missouri",29,"Female","F","Black or African American",5789,2994,26.13
+"Missouri",29,"Female","F","White",29696,3258.78,27.97
+"Missouri",29,"Male","M","American Indian or Alaska Native",190,3302.58,26.77
+"Missouri",29,"Male","M","Asian or Pacific Islander",1114,3252.69,30.27
+"Missouri",29,"Male","M","Black or African American",5871,3110.17,26.24
+"Missouri",29,"Male","M","White",31217,3393.93,27.84
+"Montana",30,"Female","F","American Indian or Alaska Native",766,3307.11,25.73
+"Montana",30,"Female","F","Asian or Pacific Islander",73,3144.74,30.53
+"Montana",30,"Female","F","Black or African American",56,3053.41,26.95
+"Montana",30,"Female","F","White",5299,3234.59,28.32
+"Montana",30,"Male","M","American Indian or Alaska Native",794,3328.95,25.64
+"Montana",30,"Male","M","Asian or Pacific Islander",79,3198.42,30.52
+"Montana",30,"Male","M","Black or African American",47,3114.06,25.89
+"Montana",30,"Male","M","White",5469,3371.12,28.29
+"Nebraska",31,"Female","F","American Indian or Alaska Native",271,3322.42,26.37
+"Nebraska",31,"Female","F","Asian or Pacific Islander",488,3153.68,28.94
+"Nebraska",31,"Female","F","Black or African American",993,3034.9,26.85
+"Nebraska",31,"Female","F","White",11193,3282.86,28.51
+"Nebraska",31,"Male","M","American Indian or Alaska Native",286,3444.5,26.06
+"Nebraska",31,"Male","M","Asian or Pacific Islander",499,3206.17,29.59
+"Nebraska",31,"Male","M","Black or African American",1016,3139.86,26.58
+"Nebraska",31,"Male","M","White",11933,3406.08,28.58
+"Nevada",32,"Female","F","American Indian or Alaska Native",235,3260.88,26.61
+"Nevada",32,"Female","F","Asian or Pacific Islander",1623,3095.31,30.5
+"Nevada",32,"Female","F","Black or African American",2312,3022.15,26.78
+"Nevada",32,"Female","F","White",13529,3210.12,28.24
+"Nevada",32,"Male","M","American Indian or Alaska Native",275,3258.26,26.53
+"Nevada",32,"Male","M","Asian or Pacific Islander",1714,3194.2,30.4
+"Nevada",32,"Male","M","Black or African American",2491,3126.29,26.9
+"Nevada",32,"Male","M","White",14119,3310.57,28.18
+"New Hampshire",33,"Female","F","American Indian or Alaska Native",14,3361.64,29.36
+"New Hampshire",33,"Female","F","Asian or Pacific Islander",268,3168.93,31.27
+"New Hampshire",33,"Female","F","Black or African American",127,3150.08,29.24
+"New Hampshire",33,"Female","F","White",5736,3304.29,29.42
+"New Hampshire",33,"Male","M","American Indian or Alaska Native",12,3391.36,29.5
+"New Hampshire",33,"Male","M","Asian or Pacific Islander",259,3289.42,30.77
+"New Hampshire",33,"Male","M","Black or African American",153,3316.12,28.88
+"New Hampshire",33,"Male","M","White",5864,3425.92,29.22
+"New Jersey",34,"Female","F","American Indian or Alaska Native",88,3294.1,28.52
+"New Jersey",34,"Female","F","Asian or Pacific Islander",5973,3121.75,31.81
+"New Jersey",34,"Female","F","Black or African American",9134,3086.43,28.33
+"New Jersey",34,"Female","F","White",35456,3252.86,30.4
+"New Jersey",34,"Male","M","American Indian or Alaska Native",84,3331.54,28.61
+"New Jersey",34,"Male","M","Asian or Pacific Islander",6219,3186.28,31.74
+"New Jersey",34,"Male","M","Black or African American",9229,3186.02,28.32
+"New Jersey",34,"Male","M","White",36944,3373.88,30.4
+"New Mexico",35,"Female","F","American Indian or Alaska Native",1711,3197.27,26.78
+"New Mexico",35,"Female","F","Asian or Pacific Islander",237,3030.07,30.65
+"New Mexico",35,"Female","F","Black or African American",324,2994.98,26.35
+"New Mexico",35,"Female","F","White",10375,3136.72,27.02
+"New Mexico",35,"Male","M","American Indian or Alaska Native",1741,3289.32,26.75
+"New Mexico",35,"Male","M","Asian or Pacific Islander",280,3179.55,30.66
+"New Mexico",35,"Male","M","Black or African American",340,3138.36,26.64
+"New Mexico",35,"Male","M","White",10808,3257.36,27.13
+"New York",36,"Female","F","American Indian or Alaska Native",335,3335.5,27.64
+"New York",36,"Female","F","Asian or Pacific Islander",12756,3126.09,31
+"New York",36,"Female","F","Black or African American",22564,3092.32,28.76
+"New York",36,"Female","F","White",79763,3257.88,29.87
+"New York",36,"Male","M","American Indian or Alaska Native",403,3377.55,28.22
+"New York",36,"Male","M","Asian or Pacific Islander",13800,3217.27,30.99
+"New York",36,"Male","M","Black or African American",23545,3208.86,28.77
+"New York",36,"Male","M","White",84108,3379.18,29.81
+"North Carolina",37,"Female","F","American Indian or Alaska Native",954,3173.59,25.88
+"North Carolina",37,"Female","F","Asian or Pacific Islander",2849,3141.7,29.98
+"North Carolina",37,"Female","F","Black or African American",15683,3016.6,26.82
+"North Carolina",37,"Female","F","White",39539,3270.38,28.5
+"North Carolina",37,"Male","M","American Indian or Alaska Native",1010,3245.87,26.09
+"North Carolina",37,"Male","M","Asian or Pacific Islander",3012,3242.91,30.09
+"North Carolina",37,"Male","M","Black or African American",16181,3132.72,26.67
+"North Carolina",37,"Male","M","White",41615,3382.56,28.47
+"North Dakota",38,"Female","F","American Indian or Alaska Native",497,3328.95,25.82
+"North Dakota",38,"Female","F","Asian or Pacific Islander",158,3110.34,29.51
+"North Dakota",38,"Female","F","Black or African American",302,3200.4,27.32
+"North Dakota",38,"Female","F","White",4551,3302.42,28.19
+"North Dakota",38,"Male","M","American Indian or Alaska Native",488,3405.33,25.73
+"North Dakota",38,"Male","M","Asian or Pacific Islander",186,3244.21,29.11
+"North Dakota",38,"Male","M","Black or African American",338,3296.33,27.51
+"North Dakota",38,"Male","M","White",4794,3422.78,28.14
+"Ohio",39,"Female","F","American Indian or Alaska Native",134,3162.46,26.35
+"Ohio",39,"Female","F","Asian or Pacific Islander",2160,3123.29,30.54
+"Ohio",39,"Female","F","Black or African American",12223,3018.59,26.4
+"Ohio",39,"Female","F","White",53461,3258.02,28.18
+"Ohio",39,"Male","M","American Indian or Alaska Native",119,3207.68,27.4
+"Ohio",39,"Male","M","Asian or Pacific Islander",2207,3209.19,30.39
+"Ohio",39,"Male","M","Black or African American",12855,3124.46,26.25
+"Ohio",39,"Male","M","White",56105,3379.44,28.14
+"Oklahoma",40,"Female","F","American Indian or Alaska Native",2869,3270.94,25.66
+"Oklahoma",40,"Female","F","Asian or Pacific Islander",863,3132.05,29.67
+"Oklahoma",40,"Female","F","Black or African American",2589,3027.36,26.02
+"Oklahoma",40,"Female","F","White",19520,3238.07,27.23
+"Oklahoma",40,"Male","M","American Indian or Alaska Native",3055,3395.86,25.55
+"Oklahoma",40,"Male","M","Asian or Pacific Islander",899,3204.97,29.78
+"Oklahoma",40,"Male","M","Black or African American",2704,3128.05,25.99
+"Oklahoma",40,"Male","M","White",20623,3357.35,27.18
+"Oregon",41,"Female","F","American Indian or Alaska Native",394,3319.95,26.81
+"Oregon",41,"Female","F","Asian or Pacific Islander",1398,3173.56,30.87
+"Oregon",41,"Female","F","Black or African American",678,3170.58,28.04
+"Oregon",41,"Female","F","White",19733,3309.72,28.82
+"Oregon",41,"Male","M","American Indian or Alaska Native",419,3428.13,27.48
+"Oregon",41,"Male","M","Asian or Pacific Islander",1497,3258.48,31
+"Oregon",41,"Male","M","Black or African American",785,3265.51,28.07
+"Oregon",41,"Male","M","White",20751,3429.85,28.81
+"Pennsylvania",42,"Female","F","American Indian or Alaska Native",189,3127.51,26.81
+"Pennsylvania",42,"Female","F","Asian or Pacific Islander",3354,3121.89,30.53
+"Pennsylvania",42,"Female","F","Black or African American",11864,3053.64,26.82
+"Pennsylvania",42,"Female","F","White",53558,3267.11,29.05
+"Pennsylvania",42,"Male","M","American Indian or Alaska Native",202,3301.89,26.6
+"Pennsylvania",42,"Male","M","Asian or Pacific Islander",3607,3208.85,30.66
+"Pennsylvania",42,"Male","M","Black or African American",12236,3162.37,26.75
+"Pennsylvania",42,"Male","M","White",56037,3391.27,28.97
+"Rhode Island",44,"Female","F","American Indian or Alaska Native",56,3020.79,26.68
+"Rhode Island",44,"Female","F","Asian or Pacific Islander",324,3172.77,30.37
+"Rhode Island",44,"Female","F","Black or African American",707,3089.07,27.95
+"Rhode Island",44,"Female","F","White",4302,3260.59,29.5
+"Rhode Island",44,"Male","M","American Indian or Alaska Native",82,3298.33,27.45
+"Rhode Island",44,"Male","M","Asian or Pacific Islander",315,3273.06,30.39
+"Rhode Island",44,"Male","M","Black or African American",685,3291.8,27.84
+"Rhode Island",44,"Male","M","White",4522,3380.48,29.26
+"South Carolina",45,"Female","F","American Indian or Alaska Native",102,3193.25,26.56
+"South Carolina",45,"Female","F","Asian or Pacific Islander",620,3159.96,30.48
+"South Carolina",45,"Female","F","Black or African American",9145,2980.9,26.45
+"South Carolina",45,"Female","F","White",18677,3263.61,28.19
+"South Carolina",45,"Male","M","American Indian or Alaska Native",115,3284.57,26.49
+"South Carolina",45,"Male","M","Asian or Pacific Islander",669,3213.73,30.58
+"South Carolina",45,"Male","M","Black or African American",9432,3094.21,26.35
+"South Carolina",45,"Male","M","White",19379,3375,28.19
+"South Dakota",46,"Female","F","American Indian or Alaska Native",1043,3325.21,25.47
+"South Dakota",46,"Female","F","Asian or Pacific Islander",155,3132.41,27.94
+"South Dakota",46,"Female","F","Black or African American",172,3194.36,28.18
+"South Dakota",46,"Female","F","White",4522,3299.37,28.32
+"South Dakota",46,"Male","M","American Indian or Alaska Native",1123,3416.18,25.56
+"South Dakota",46,"Male","M","Asian or Pacific Islander",167,3244.14,27.75
+"South Dakota",46,"Male","M","Black or African American",172,3273.21,27.51
+"South Dakota",46,"Male","M","White",4982,3425.41,28.38
+"Tennessee",47,"Female","F","American Indian or Alaska Native",104,3168.11,27.22
+"Tennessee",47,"Female","F","Asian or Pacific Islander",1052,3129.86,30.15
+"Tennessee",47,"Female","F","Black or African American",8721,2991.74,26.11
+"Tennessee",47,"Female","F","White",30073,3237.4,27.61
+"Tennessee",47,"Male","M","American Indian or Alaska Native",107,3302.08,27.67
+"Tennessee",47,"Male","M","Asian or Pacific Islander",1101,3235.17,30.19
+"Tennessee",47,"Male","M","Black or African American",8786,3118.54,26.07
+"Tennessee",47,"Male","M","White",31741,3352.46,27.57
+"Texas",48,"Female","F","American Indian or Alaska Native",642,3294.6,27.31
+"Texas",48,"Female","F","Asian or Pacific Islander",10627,3093.5,31.02
+"Texas",48,"Female","F","Black or African American",26127,3032.37,27.14
+"Texas",48,"Female","F","White",160156,3215.59,27.63
+"Texas",48,"Male","M","American Indian or Alaska Native",628,3356.57,27.18
+"Texas",48,"Male","M","Asian or Pacific Islander",11148,3190.62,30.99
+"Texas",48,"Male","M","Black or African American",27017,3138.85,27.12
+"Texas",48,"Male","M","White",167273,3326.68,27.64
+"Utah",49,"Female","F","American Indian or Alaska Native",330,3210.94,26.19
+"Utah",49,"Female","F","Asian or Pacific Islander",912,3129.82,29.66
+"Utah",49,"Female","F","Black or African American",396,3069.53,27.22
+"Utah",49,"Female","F","White",23071,3220.8,28.43
+"Utah",49,"Male","M","American Indian or Alaska Native",369,3327.43,26.45
+"Utah",49,"Male","M","Asian or Pacific Islander",963,3237.12,29.28
+"Utah",49,"Male","M","Black or African American",427,3196.56,27.07
+"Utah",49,"Male","M","White",24310,3336.86,28.36
+"Vermont",50,"Female","F","Asian or Pacific Islander",76,3172.38,29.45
+"Vermont",50,"Female","F","Black or African American",66,3173.73,28.45
+"Vermont",50,"Female","F","White",2688,3307.31,29.26
+"Vermont",50,"Male","M","American Indian or Alaska Native",16,3216.88,27.56
+"Vermont",50,"Male","M","Asian or Pacific Islander",99,3249.6,30.98
+"Vermont",50,"Male","M","Black or African American",83,3297.48,28.55
+"Vermont",50,"Male","M","White",2866,3430.04,28.99
+"Virginia",51,"Female","F","American Indian or Alaska Native",129,3301.95,28.43
+"Virginia",51,"Female","F","Asian or Pacific Islander",4136,3146.67,31.32
+"Virginia",51,"Female","F","Black or African American",11271,3060.02,27.5
+"Virginia",51,"Female","F","White",34842,3294.91,29.36
+"Virginia",51,"Male","M","American Indian or Alaska Native",125,3394.58,29.3
+"Virginia",51,"Male","M","Asian or Pacific Islander",4399,3249.53,31.37
+"Virginia",51,"Male","M","Black or African American",11758,3175.03,27.5
+"Virginia",51,"Male","M","White",36643,3402.62,29.35
+"Washington",53,"Female","F","American Indian or Alaska Native",971,3328.85,26.9
+"Washington",53,"Female","F","Asian or Pacific Islander",5129,3174.47,30.86
+"Washington",53,"Female","F","Black or African American",2589,3170.72,28.51
+"Washington",53,"Female","F","White",34453,3320.96,28.99
+"Washington",53,"Male","M","American Indian or Alaska Native",1065,3382.45,27.23
+"Washington",53,"Male","M","Asian or Pacific Islander",5482,3245.69,31.13
+"Washington",53,"Male","M","Black or African American",2713,3281.57,28.22
+"Washington",53,"Male","M","White",36588,3443.35,28.99
+"West Virginia",54,"Female","F","American Indian or Alaska Native",14,3205.14,25.71
+"West Virginia",54,"Female","F","Asian or Pacific Islander",105,3031.94,31.18
+"West Virginia",54,"Female","F","Black or African American",357,3065.46,26.59
+"West Virginia",54,"Female","F","White",9231,3191.53,26.71
+"West Virginia",54,"Male","M","American Indian or Alaska Native",14,3423,27.57
+"West Virginia",54,"Male","M","Asian or Pacific Islander",120,3239.51,30.23
+"West Virginia",54,"Male","M","Black or African American",381,3079.48,25.67
+"West Virginia",54,"Male","M","White",9583,3313.42,26.75
+"Wisconsin",55,"Female","F","American Indian or Alaska Native",527,3305.63,26.91
+"Wisconsin",55,"Female","F","Asian or Pacific Islander",1611,3146.07,29.12
+"Wisconsin",55,"Female","F","Black or African American",3578,2981.82,25.94
+"Wisconsin",55,"Female","F","White",27112,3305.14,29.05
+"Wisconsin",55,"Male","M","American Indian or Alaska Native",502,3489.56,26.72
+"Wisconsin",55,"Male","M","Asian or Pacific Islander",1665,3247,29.07
+"Wisconsin",55,"Male","M","Black or African American",3808,3112.72,25.83
+"Wisconsin",55,"Male","M","White",28238,3425.41,29.03
+"Wyoming",56,"Female","F","American Indian or Alaska Native",146,3169.07,25.66
+"Wyoming",56,"Female","F","Asian or Pacific Islander",62,3198.5,29.58
+"Wyoming",56,"Female","F","Black or African American",62,2969.4,26.61
+"Wyoming",56,"Female","F","White",3444,3137.19,27.58
+"Wyoming",56,"Male","M","American Indian or Alaska Native",148,3212.89,25.28
+"Wyoming",56,"Male","M","Asian or Pacific Islander",73,3220.15,31.32
+"Wyoming",56,"Male","M","Black or African American",57,3230.11,26.68
+"Wyoming",56,"Male","M","White",3773,3265.31,27.45

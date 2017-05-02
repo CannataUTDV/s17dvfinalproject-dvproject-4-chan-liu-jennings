@@ -307,6 +307,82 @@ $(document).ready(function () {
 ##  Average_Birth_Weight number(38,4),
 ##  Average_Age_Mother number(38,4)
 ##  );</code></pre>
+<pre class="r"><code>require(readr)
+require(plyr)
+
+file_path = &quot;../01 Data/Natality.csv&quot;
+natality &lt;- readr::read_csv(file_path)
+names(natality)
+
+df &lt;- natality
+
+names(df)
+str(df) # Uncomment this line and  run just the lines to here to get column types to use for getting the list of measures.
+
+measures &lt;- c(&quot;State_Code&quot;,&quot;Births&quot;,&quot;Average_Birth_Weight&quot;,&quot;Average_Age_Mother&quot;)
+
+dimensions &lt;- setdiff(names(df), measures)
+dimensions
+
+# Get rid of special characters in each column.
+# Google ASCII Table to understand the following:
+for(n in names(df)) {
+  df[n] &lt;- data.frame(lapply(df[n], gsub, pattern=&quot;[^ -~]&quot;,replacement= &quot;&quot;))
+}
+str(df)
+
+na2emptyString &lt;- function (x) {
+  x[is.na(x)] &lt;- &quot;&quot;
+  return(x)
+}
+
+if( length(dimensions) &gt; 0) {
+  for(d in dimensions) {
+    # Change NA to the empty string.
+    df[d] &lt;- data.frame(lapply(df[d], na2emptyString))
+    # Get rid of &quot; and ' in dimensions.
+    df[d] &lt;- data.frame(lapply(df[d], gsub, pattern=&quot;[\&quot;']&quot;,replacement= &quot;&quot;))
+    # Change &amp; to and in dimensions.
+    df[d] &lt;- data.frame(lapply(df[d], gsub, pattern=&quot;&amp;&quot;,replacement= &quot; and &quot;))
+    # Change : to ; in dimensions.
+    df[d] &lt;- data.frame(lapply(df[d], gsub, pattern=&quot;:&quot;,replacement= &quot;;&quot;))
+  }
+}
+
+na2zero &lt;- function (x) {
+  x[is.na(x)] &lt;- 0
+  return(x)
+}
+# Get rid of all characters in measures except for numbers, the - sign, and period.dimensions, and change NA to 0.
+if( length(measures) &gt; 1) {
+  for(m in measures) {
+    print(m)
+    df[m] &lt;- data.frame(lapply(df[m], gsub, pattern=&quot;[^--.0-9]&quot;,replacement= &quot;&quot;))
+    df[m] &lt;- data.frame(lapply(df[m], na2zero))
+    df[m] &lt;- lapply(df[m], function(x) as.numeric(as.character(x)))
+    #df[m] &lt;- data.frame(lapply(df[m], as.numeric(as.character))) # This is needed to turn measures back to numeric because gsub turns them into strings.
+  }
+}
+
+str(df)
+
+write.csv(df, gsub(&quot;Natality&quot;, &quot;Natality&quot;, file_path), row.names=FALSE, na = &quot;&quot;)
+
+tableName &lt;- gsub(&quot; +&quot;, &quot;_&quot;, gsub(&quot;[^A-z, 0-9, ]&quot;, &quot;&quot;, gsub(&quot;.csv&quot;, &quot;&quot;, file_path)))
+sql &lt;- paste(&quot;CREATE TABLE&quot;, tableName, &quot;(\n Natality \n&quot;)
+if( length(measures) &gt; 0 || ! is.na(dimensions)) {
+  for(d in dimensions) {
+    sql &lt;- paste(sql, paste(d, &quot;varchar2(4000),\n&quot;))
+  }
+}
+if( length(measures) &gt; 0 || ! is.na(measures)) {
+  for(m in measures) {
+    if(m != tail(measures, n=1)) sql &lt;- paste(sql, paste(m, &quot;number(38,4),\n&quot;))
+    else sql &lt;- paste(sql, paste(m, &quot;number(38,4)\n&quot;))
+  }
+}
+sql &lt;- paste(sql, &quot;);&quot;)
+cat(sql)</code></pre>
 </div>
 <div id="the-cleaned-up-data" class="section level1">
 <h1><strong>The Cleaned up data</strong></h1>

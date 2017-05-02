@@ -24,8 +24,11 @@ sessionInfo(package=NULL)
 
 #**ETL Script**
 
+
 ```{r}
 source("../01 Data/ETL.R")
+```
+```{r, code= readLines("../01 Data/ETL.R"), eval=FALSE}
 ```
 
 #**The Cleaned up data**
@@ -40,6 +43,13 @@ https://data.world/conneyc/s-17-dv-project-5
 
 
 #**Tableau Visualizations**
+
+<center>![Boxplot](Births boxplot.png)</center>
+This visualization is a boxplot of state vs births. It is filtered by Race and Births and has the detail of the gender of the births. It is observed that California has the largest number of births for female and males followed by Texas. 
+
+<center>![Histogram](TreemapDrag.png)</center>
+This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the lastest while African Americans have them the earliest. 
+
 
 <center>![Bar Chart](Barchart.png)</center>
 
