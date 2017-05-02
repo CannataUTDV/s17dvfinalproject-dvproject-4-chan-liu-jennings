@@ -44,42 +44,29 @@ https://data.world/conneyc/s-17-dv-project-5
 
 #**Tableau Visualizations**
 
-<center>![Boxplot](Births boxplot.png)</center>
+<center>![Boxplot](Births boxplot.png)</center><br>
 This visualization is a boxplot of state vs births. It is filtered by Race and Births and has the detail of the gender of the births. It is observed that California has the largest number of births for female and males followed by Texas. 
+<hr>
 
-<center>![Histogram](TreemapDrag.png)</center>
+<center>![Histogram](TreemapDrag.png)</center><br>
 This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the lastest while African Americans have them the earliest. 
 
+<center>![Scatterplot](Scatterplot.png)</center><br>
 
-<center>![Bar Chart](Barchart.png)</center>
+<hr>
 
-This graph shows average birth weight in grams for each race in each state. A reference line was added that depicts the average birth weight for that state overall. The mark label for the reference line was formatted with a "g" at the end to convey the unit grams.
+<center>![Bar Chart](Barchart.png)</center><br>
+
+This graph shows average birth weight in grams for each race in each state and the reference line, but the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color and text and displayed by the mark labels, the color of the bars, and numbers are shown when the mouse is hovered over each bar.
 The data reflects that White babies and American Indian/Alaskan babies tend to weigh more than the average baby in each state.
 
-<center>![Table Calculations](Table Calculations.png)</center><br>
-
-This graph like the first one shows average birth weight in grams for each race in each state and the reference line, but the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color and text and displayed by the mark labels, the color of the bars, and numbers are shown when the mouse is hovered over each bar. The trend of White and American Indian/Alaskan babies weighing more than the average baby remains the same. 
-<hr>
-
-<center>![ID Set - High](ID Sets - High.png)</center><br>
-<center>![ID Set - Medium](ID Sets - Medium.png)</center><br>
-<center>![ID Set - Low](ID Sets - Low.png)</center><br>
-
-The median age of each state from the US Census 2015 data was joined with the Natality data through states= AreaNae.
-These graphs depict the median age of each state (Census2015.cvs) by its numerical state code id (Natality.csv), labelled with the total sum of births within that state. States with a median age over 40 were selected for a High Median Age States set. States with a median age between 36 and 40 were selected for a Medium Median Age Set. All other states were designated for a Low Median Age set.
-
-<center>![ID Sets on Map - High](ID Sets on Map - High.png)</center><br>
-<center>![ID Sets on Map- Medium](ID Sets on Map - Medium (+ Hawaii).png)</center><br>
-<center>![ID Sets on Map - Low](ID Sets on Map - Low (+ Alaska).png)</center><br>
-
-This visualization uses State, State_Code, and Births from Natality.csv and Median Age from Census2015.csv.
-These graphs were created by generating a US map and plotting the High Median Age set, Medium Median Age set, and Low Median Age set on separate pages. The sum of births in each state is depicted by the color of each dot and the label associated with it.
-
-<hr>
+<br>
 
 <center>![High Median Age States](High Median Age States.png)</center><br>
 
 This graph shows the sum of births in each of the High Median States, with each bar color broken down by the number of births contributed by each race within that state. 
+
+<hr>
 
 #**Shiny Visualizations**
 Our visualizations are published in an application on our accounts:
