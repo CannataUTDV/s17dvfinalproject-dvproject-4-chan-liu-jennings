@@ -38,10 +38,11 @@ dashboardPage(
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
                          actionButton(inputId = "hgclick1",  label = "To get data, click here"),
+                         uiOutput("races2"),
                          hr(), # Add space after button.
                          DT::dataTableOutput("hgdata1")
                 ),
-                tabPanel("Histogram1", "Info", plotOutput("hgplot1", height=700))
+                tabPanel("Histogram1: Avg Age of Mother", "Count of average age of mother for selected races, Red line is avg age of mother for selected race", plotlyOutput("hgplot1", height=700))
               )
       ),
       tabItem(tabName = "scatterplots",
@@ -55,7 +56,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("spdata1")
                 ),
-                tabPanel("Scatterplot1", "Median Age of a State vs Births", plotlyOutput("spplot1", height=700))
+                tabPanel("Scatterplot1: Median_Age and Births", "Median Age of a State vs Births", plotlyOutput("spplot1", height=700))
               )
       ),
       tabItem(tabName = "crosstabs",

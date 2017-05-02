@@ -11,6 +11,12 @@ require(plotly)
 shinyServer(function(input, output) { 
   
   #radiobuttons
+  # These widgets are for the histograms tab.
+  hgonline1 = reactive({input$hgrb1})
+  output$races2 <- renderUI({selectInput("selectedRaces", "Choose Races:", race_list, multiple = TRUE) })
+  # These widgets are for the scatterplots tab.
+  sponline1 = reactive({input$sprb1})
+  output$states2 <- renderUI({selectInput("selectedStates", "Choose States:", state_list, multiple = TRUE) })
   # Crosstab
   ctonline1 = reactive({input$ctrb1})
   KPI_Low1 = reactive({input$KPI1})     
@@ -25,10 +31,67 @@ shinyServer(function(input, output) {
   bconline1 = reactive({input$bcrb1})
   bconline2 = reactive({input$bcrb2})
   bconline3 = reactive({input$bcrb3})
-  # These widgets are for the scatterplots tab.
-  sponline1 = reactive({input$sprb1})
-  output$states2 <- renderUI({selectInput("selectedStates", "Choose Categories:", state_list, multiple = TRUE) })
   
+  # The following query is for the select list in the histogram tab.
+  races = query(
+    data.world(propsfile = "www/.data.world"),
+    dataset="conneyc/s-17-dv-project-5", type="sql",
+    query="select distinct Race as D, Race as R
+    from Natality
+    order by 1"
+  ) # %>% View()
+  if(races[1] == "Server error") {
+    print("Getting Races from csv")
+    file_path = "www/Natality.csv"
+    df <- readr::read_csv(file_path) 
+    tdf1 = df %>% dplyr::distinct(Race) %>% arrange(Race) %>% dplyr::rename(D = Race)
+    tdf2 = df %>% dplyr::distinct(Race) %>% arrange(Race) %>% dplyr::rename(D = Race)
+    races = bind_cols(tdf1, tdf2)
+  }
+  race_list <- as.list(races$D, races$R)
+  race_list <- append(list("All" = "All"), race_list)
+  
+  
+  # Begin Histogram Tab ------------------------------------------------------------------
+  hgdf1 <- eventReactive(input$hgclick1, {
+    if(input$selectedRaces == 'All') race_list <- input$selectedRaces
+    else race_list <- append(list("Skip" = "Skip"), input$selectedRaces)
+    
+    if(hgonline1() == "SQL") {
+      print("Getting from data.world")
+      df = query(
+        data.world(propsfile = "www/.data.world"),
+        dataset="conneyc/s-17-dv-project-5", type="sql",
+        query="select Race, Average_Age_Mother
+        from Natality
+        where ? = 'All' or Race in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        queryParameters = race_list
+      )  #%>% View()
+    }
+    else {
+      print("Getting from csv")
+      file_path = "www/Natality.csv"
+      df <- readr::read_csv(file_path)
+      df <- df %>% dplyr::select(Race, Average_Age_Mother) %>% 
+        dplyr::filter(Race %in% input$selectedRaces | input$selectedRaces == "All") 
+      #View(df)
+    }
+    tdf1 = df %>% group_by(Race) %>% summarize(avg_age_mother = mean(Average_Age_Mother))
+    dplyr::inner_join(df, tdf1, by = "Race")
+  })
+  output$hgdata1 <- renderDataTable({DT::datatable(hgdf1(), rownames = FALSE,
+                                                 extensions = list(Responsive = TRUE, FixedHeader = TRUE)
+  )
+  })
+  output$hgplot1 <- renderPlotly({ p <- ggplot(hgdf1(), aes(x=Average_Age_Mother)) +
+      theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5)) + 
+      theme(axis.text.y=element_text(size=12, hjust=0.5)) +
+      geom_histogram(aes(x=Average_Age_Mother), binwidth=0.4) +
+      geom_vline(aes(xintercept = avg_age_mother), color = "red")
+      ggplotly(p)
+  })
+  
+  # End Histogram Tab ___________________________________________________________
   
   
   # The following query is for the select list in the scatterplot tab.
