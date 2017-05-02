@@ -55,16 +55,26 @@ This Treemap displays the count of the average age of mothers for each age in 0.
 
 <hr>
 
+center>![Crosstab + KPI](Crosstab + KPI.png)</center>
+
+This graph shows average birth weight per state by race. It is colored by the calculated field (KPI): AVG(average birth weight)/4000. The number 4000 is an average healthy birth weight in the US. The data reflects that white babies tend to weigh more than the other races.
+<hr>
+
+<center>![Crosstab + KPI 3](Crosstab + KPI 3.png)</center><br>
+
+This graph was created by joining Natality.csv with Census2015.csv through State= AreaName. It shows the total number of births for each race per state using the data from Natality.csv. The number of births for corresponding states is colored by the Median_Age column from Census2015.csv using parameters. The parameters are low: 0-34.7, medium: 34.7-39.3, and high: 39.3+. Regardless of median age, Whites have the largest number of births followed by Black or African, Asian or Pacific Islander then American Indian or Alaska Native. However, this trend is most likely a reflection of the existing demographic where the majority of the population is White. Texas is a low Median age state and has a high number of births. 
+<hr>
+
 <center>![Bar Chart](Barchart.png)</center><br>
 
 This graph shows average birth weight in grams for each race in each state and the reference line, but the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color and text and displayed by the mark labels, the color of the bars, and numbers are shown when the mouse is hovered over each bar.
-The data reflects that White babies and American Indian/Alaskan babies tend to weigh more than the average baby in each state.
+The data reflects that White babies and American Indian/Alaskan babies tend to weigh more than the average baby for each state.
 
 <br>
 
 <center>![High Median Age States](High Median Age States.png)</center><br>
-
-This graph shows the sum of births in each of the High Median States, with each bar color broken down by the number of births contributed by each race within that state. 
+This graph used data from Census2015 (Median Age) and Natality (Births, Race) joined by State.
+It shows the sum of births in High Median Age States, which is a set of states which an average median age greater than 40. Each bar color is broken down by the number of births contributed by each race within that state. Average Median Age is put into detail. Maine has the highest median age. All these states have the largest number of births that are White, followed by Black, Asian and Native. Of these high median age states, Florida has the largest number of births. 
 
 <hr>
 
