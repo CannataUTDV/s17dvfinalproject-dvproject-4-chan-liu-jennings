@@ -24,11 +24,12 @@ dashboardPage(
                          radioButtons("bprb1", "Get data from:",
                                       c("SQL" = "SQL",
                                         "CSV" = "CSV"), inline=T),
+                         uiOutput("states3"),
                          actionButton(inputId = "bpclick1",  label = "To get data, click here"),
                          hr(), # Add space after button.
                          DT::dataTableOutput("bpdata1")
                 ),
-                tabPanel("Boxplot1", "Info", plotOutput("bpplot1", height=1500))
+                tabPanel("Boxplot1", "Info", plotlyOutput("bpplot1", height=1500))
               )
       ),
       tabItem(tabName = "histograms",

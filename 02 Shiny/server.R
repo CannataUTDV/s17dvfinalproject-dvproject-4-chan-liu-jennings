@@ -11,6 +11,9 @@ require(plotly)
 shinyServer(function(input, output) { 
   
   #radiobuttons
+  # These widgets are for the boxplots tab.
+  bponline1 = reactive({input$bprb1})
+  output$states3 <- renderUI({selectInput("selectedStates3", "Choose States:", state_list3, multiple = TRUE) })
   # These widgets are for the histograms tab.
   hgonline1 = reactive({input$hgrb1})
   output$races2 <- renderUI({selectInput("selectedRaces", "Choose Races:", race_list, multiple = TRUE) })
@@ -31,6 +34,65 @@ shinyServer(function(input, output) {
   bconline1 = reactive({input$bcrb1})
   bconline2 = reactive({input$bcrb2})
   bconline3 = reactive({input$bcrb3})
+  
+  # Begin Boxplot Tab ------------------------------------------------------------------
+  
+  # The following query is for the select list in the boxplot tab.
+  states3 = query(
+    data.world(propsfile = "www/.data.world"),
+    dataset="conneyc/s-17-dv-project-5", type="sql",
+    query="select distinct State as D, State as R
+    from Natality
+    order by 1"
+  ) # %>% View()
+  if(states3[1] == "Server error") {
+    print("Getting States from csv")
+    file_path = "www/Natality.csv"
+    df <- readr::read_csv(file_path) 
+    tdf1 = df %>% dplyr::distinct(State) %>% arrange(State) %>% dplyr::rename(D = State)
+    tdf2 = df %>% dplyr::distinct(State) %>% arrange(State) %>% dplyr::rename(D = State)
+    states3 = bind_cols(tdf1, tdf2)
+  }
+  state_list3 <- as.list(states3$D, states3$R)
+  state_list3 <- append(list("All" = "All"), state_list3)
+  
+  bpdf1 <- eventReactive(input$bpclick1, {
+    if(input$selectedStates3 == 'All') state_list3 <- input$selectedStates3
+    else state_list3 <- append(list("Skip" = "Skip"), input$selectedStates3)
+    
+    if(bponline1() == "SQL") {
+      print("Getting from data.world")
+      tdf = query(
+        data.world(propsfile = "www/.data.world"),
+        dataset="conneyc/s-17-dv-project-5", type="sql",
+        query="select State, Births, Race
+        from Natality 
+        where ? = 'All' or State in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        queryParameters = state_list3
+      )  #%>% View()
+    }
+    else {
+      print("Getting from csv")
+      file_path = "www/Natality.csv"
+      df <- readr::read_csv(file_path)
+      df <- df %>% dplyr::select(State, Births, Race) %>%
+        dplyr::filter(State %in% input$selectedStates3 | input$selectedStates3 == "All")
+    }
+  })
+  output$bpdata1 <- renderDataTable({DT::datatable(bpdf1(), rownames = FALSE,
+                                                   extensions = list(Responsive = TRUE, FixedHeader = TRUE)
+  )
+  })
+  output$bpplot1 <- renderPlotly({ p <- ggplot(bpdf1(), aes(x=State, y=Births)) +
+    theme(axis.text.x=element_text(angle=90, size=10, vjust=0.5)) + 
+    theme(axis.text.y=element_text(size=12, hjust=0.5)) +
+    geom_boxplot(aes(x=State, y = Births))
+  ggplotly(p)
+  })
+  
+  # End Boxplot Tab ___________________________________________________________
+  
+  
   
   # The following query is for the select list in the histogram tab.
   races = query(
