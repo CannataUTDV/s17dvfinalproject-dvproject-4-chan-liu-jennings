@@ -49,9 +49,11 @@ This visualization is a boxplot of state vs births. It is filtered by Race and B
 <hr>
 
 <center>![Histogram](TreemapDrag.png)</center><br>
-This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the lastest while African Americans have them the earliest. 
+This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the latest while African Americans have them the earliest. 
 
 <center>![Scatterplot](Scatterplot.png)</center><br>
+
+This scatterplot compares the median age and number of births of each state. Each point signifies the median age of the state and number of births of each gender for a specific race within that state. The shape of the points classify the race and the color classifies the state. A trend line was added which shows Births = -682.411*Median_Age + 35676.1, meaning as the median age of the state increases, there appears to be a decrease in the number of births.
 
 <hr>
 
