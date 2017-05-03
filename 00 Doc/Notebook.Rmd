@@ -42,66 +42,83 @@ The data file containing the census data we are using, Census2015.csv, is on con
 https://data.world/conneyc/s-17-dv-project-5
 
 
-#**Tableau Visualizations**
+#**Visualizations**
 
-<center>![Boxplot](Births boxplot.png)</center><br>
+#*Boxplots*
+<center>![Boxplot Tableau](Births boxplot.png)</center><br>
 This visualization is a boxplot of state vs births. It is filtered by Race and Births and has the detail of the gender of the births. It is observed that California has the largest number of births for female and males followed by Texas. 
+
+<center>![Boxplot Shiny](shinyboxplot1.png)</center><br>
+This is the same data visualization done in Shiny.
+
 <hr>
 
-<center>![Histogram](TreemapDrag.png)</center><br>
+#*Histograms*
+<center>![Histogram Tableau](TreemapDrag.png)</center><br>
 This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the latest while African Americans have them the earliest. 
 
-<center>![Scatterplot](Scatterplot.png)</center><br>
+<center>![Histogram Shiny](histogramnatives.png)</center><br>
+Natives
+<center>![Histogram Shiny](histogramasian.png)</center><br>
+Asian/Pacific Islanders
+<center>![Histogram Shiny](histogramblack.png)</center><br>
+African Americans
+<center>![Histogram Shiny](histogramwhite.png)</center><br>
+White
+These Shiny histograms show the same result as the Tableau treemap, with the addition of a vertical average line for the average average-median-age for each race. The average line is close to the highest bar for each race except African American, where the average line is about a year later than the most common average-median-age.
 
+<hr>
+
+#*Scatterplots*
+<center>![Scatterplot Tableau](Scatterplot.png)</center><br>
 This scatterplot compares the median age and number of births of each state. Each point signifies the median age of the state and number of births of each gender for a specific race within that state. The shape of the points classify the race and the color classifies the state. A trend line was added which shows Births = -682.411*Median_Age + 35676.1, meaning as the median age of the state increases, there appears to be a decrease in the number of births.
 
+<center>![Scatterplot Shiny](shinyscatter1.png)</center><br>
+This is the same visualization done in Shiny.
+
 <hr>
 
-<center>![Crosstab + KPI](Crosstab + KPI.png)</center><br>
-
+#*Crosstabs*
+<center>![Crosstab + KPI Tableau](Crosstab + KPI.png)</center><br>
 This graph shows average birth weight per state by race. It is colored by the calculated field (KPI): AVG(average birth weight)/4000. The number 4000 is an average healthy birth weight in the US. The data reflects that white babies tend to weigh more than the other races.
+
+<center>![Crosstab + KPI Shiny1](shinycrosstab1.png)</center><br>
+This is the same visualization done in Shiny.
+
 <hr>
 
-<center>![Crosstab + KPI 3](Crosstab + KPI 3.png)</center><br>
+<center>![Crosstab + KPI 3 Tableau](Crosstab + KPI 3.png)</center><br>
 
 This graph was created by joining Natality.csv with Census2015.csv through State= AreaName. It shows the total number of births for each race per state using the data from Natality.csv. The number of births for corresponding states is colored by the Median_Age column from Census2015.csv using parameters. The parameters are low: 0-34.7, medium: 34.7-39.3, and high: 39.3+. Regardless of median age, Whites have the largest number of births followed by Black or African, Asian or Pacific Islander then American Indian or Alaska Native. However, this trend is most likely a reflection of the existing demographic where the majority of the population is White. Texas is a low Median age state and has a high number of births. 
+
+<center>![Crosstab + KPI Shiny2](shinycrosstab2.png)</center><br>
+This is the same visualization done in Shiny.
+
 <hr>
 
-<center>![Bar Chart](Barchart.png)</center><br>
-
+#*Barcharts*
+<center>![Bar Chart Tableau](Barchart.png)</center><br>
 This graph shows average birth weight in grams for each race in each state and the reference line, but the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color and text and displayed by the mark labels, the color of the bars, and numbers are shown when the mouse is hovered over each bar.
 The data reflects that White babies and American Indian/Alaskan babies tend to weigh more than the average baby for each state.
-
 <br>
 
-<center>![High Median Age States](High Median Age States.png)</center><br>
+<center>![Bar Chart Shiny](shinybarchart1.png)</center><br>
+This is the Shiny version. The states chosen are states in the deep south, and the trend of White and Native babies weighing more continues for these states. The average line shows the average birth weight for the state, and the calculated difference is the difference between the average birth weight in the state and the average birth weight for the specific race in the state.
+
+<hr>
+
+<center>![High Median Age States Tableau](High Median Age States.png)</center><br>
 This graph used data from Census2015 (Median Age) and Natality (Births, Race) joined by State.
 It shows the sum of births in High Median Age States, which is a set of states which an average median age greater than 40. Each bar color is broken down by the number of births contributed by each race within that state. Average Median Age is put into detail. Maine has the highest median age. All these states have the largest number of births that are White, followed by Black, Asian and Native. Of these high median age states, Florida has the largest number of births. 
 
+<center>![Bar Chart Shiny2](shinybarchart2.png)</center><br>
+The Shiny version is the same for this visualization.
+
 <hr>
 
-#**Shiny Visualizations**
+#**Shiny Application**
 Our visualizations are published in an application on our accounts:
 
-https://kellyjennings.shinyapps.io/project62/
-
-https://conneyc.shinyapps.io/project6/
-
-https://cliu42.shinyapps.io/project6/
-
-Here are screenshots of the Shiny visualizations:
-
-<center>![Barchart](barchart1.png)</center><br>
-
-This Shiny visualization is similar to the Table Calculations Tableau visualization, filtered for states in the deep south. It compares the average birth weights of babies of different races in each state. The white text on the bars is the average birth weight for a race in that state. The red Reference Line and its label show the average birth weight per state. The blue text is a Table Calculation that shows the difference between the state and race average. An interesting observation is that for these southern states, white babies and American Indian/Alaskan native babies have birth weights above the state average while black/African American babies and Asian/Pacific Islander babies have birth weights below the state average.
-
-
-<center>![ID set: High Median Age States](barchart2.png)</center><br>
-
-This visualization is the Shiny version of our ID Set- High Median Age Tableau visualization. We filtered the data to only contain the set of states with a median age of 40 or above, which you can observe from the red Reference Line. We inner joined on columns AreaName and State in order to show the median age from the census table and the state ID from the natality table. It is interesting that the High Median Age States tend to be in the Northeast.
-
-<center>![Births in High Median Age States](barchart3.png)</center><br>
-
-The last visualization contains the set of High Median Age States and their number of births, colored by race. We used a join to get the median age from the census data and the number of births from the natality data. Note that the number of births reflects the population of these states, and the population of the races within these states.
+https://kellyjennings.shinyapps.io/finalproject/
 
 
