@@ -98,7 +98,7 @@ This is the same visualization done in Shiny.
 
 #*Barcharts*
 <center>![Bar Chart Tableau](Barchart.png)</center><br>
-This graph shows average birth weight in grams for each race in each state and the reference line, but the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color and text and displayed by the mark labels, the color of the bars, and numbers are shown when the mouse is hovered over each bar.
+This graph shows average birth weight (in grams) for each race in each state. There is a reference line that is the average birth weight for the state, and the calculated difference from average is applied. The calculated difference is the average birth weight (for that race in that state) minus the total average birth weight of all the states. It is used for color of the bars and text and displayed by the mark labels. Numbers are shown when the mouse is hovered over each bar.
 The data reflects that White babies and American Indian/Alaskan babies tend to weigh more than the average baby for each state.
 <br>
 
@@ -120,5 +120,7 @@ The Shiny version is the same for this visualization.
 Our visualizations are published in an application on our accounts:
 
 https://kellyjennings.shinyapps.io/finalproject/
+
+https://conneyc.shinyapps.io/finalproject/
 
 
