@@ -57,7 +57,7 @@ This scatterplot compares the median age and number of births of each state. Eac
 
 <hr>
 
-center>![Crosstab + KPI](Crosstab + KPI.png)</center>
+<center>![Crosstab + KPI](Crosstab + KPI.png)</center><br>
 
 This graph shows average birth weight per state by race. It is colored by the calculated field (KPI): AVG(average birth weight)/4000. The number 4000 is an average healthy birth weight in the US. The data reflects that white babies tend to weigh more than the other races.
 <hr>
