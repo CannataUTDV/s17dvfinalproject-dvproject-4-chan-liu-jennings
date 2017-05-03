@@ -29,7 +29,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("bpdata1")
                 ),
-                tabPanel("Boxplot1", "Info", plotlyOutput("bpplot1", height=1500))
+                tabPanel("Boxplot1: Births per State", "Births per state boxplot for selected states", plotlyOutput("bpplot1", height=1500))
               )
       ),
       tabItem(tabName = "histograms",

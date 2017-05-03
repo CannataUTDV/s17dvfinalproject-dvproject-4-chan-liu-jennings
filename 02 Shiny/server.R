@@ -85,7 +85,7 @@ shinyServer(function(input, output) {
   })
   output$bpplot1 <- renderPlotly({ p <- ggplot(bpdf1(), aes(x=State, y=Births)) +
     theme(axis.text.x=element_text(angle=90, size=10, vjust=0.5)) + 
-    theme(axis.text.y=element_text(size=12, hjust=0.5)) +
+    theme(axis.text.y=element_text(size=10, hjust=0.5)) +
     geom_boxplot(aes(x=State, y = Births))
   ggplotly(p)
   })
@@ -148,7 +148,7 @@ shinyServer(function(input, output) {
   output$hgplot1 <- renderPlotly({ p <- ggplot(hgdf1(), aes(x=Average_Age_Mother)) +
       theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
-      geom_histogram(aes(x=Average_Age_Mother), binwidth=0.4) +
+      geom_histogram(aes(x=Average_Age_Mother), binwidth=0.5) +
       geom_vline(aes(xintercept = avg_age_mother), color = "red")
       ggplotly(p)
   })
@@ -258,7 +258,7 @@ shinyServer(function(input, output) {
   )
   })
   output$ctplot1 <- renderPlotly({p <- ggplot(ctdf1()) + 
-      theme(axis.text.x=element_text(angle=90, size=11, vjust=0.5)) + 
+      theme(axis.text.x=element_text(angle=90, size=8, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=11, hjust=0.5)) +
       geom_text(aes(x=Race, y=State, label=avg_bw), size=3) +
       geom_tile(aes(x=Race, y=State, fill=kpi), alpha=0.50)
@@ -406,7 +406,7 @@ shinyServer(function(input, output) {
   })
   output$bcplot1 <- renderPlot({ggplot(bcdf1(), aes(x=Race, y=avg_b)) +
       scale_y_continuous(labels = scales::comma) + # no scientific notation
-      theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5)) + 
+      theme(axis.text.x=element_text(angle=0, size=14, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
       #scale_y_continuous(limits = c(0, 5000)) +
       #theme(panel.spacing.x = unit(30, "lines")) +
@@ -504,7 +504,7 @@ shinyServer(function(input, output) {
   })
   output$bcplot3 <- renderPlotly({p <- ggplot(bcdf3(), aes(x=state, y=Births)) +
       scale_y_continuous(labels = scales::comma) + # no scientific notation
-      theme(axis.text.x=element_text(angle=0, size=8, vjust=0.5)) + 
+      theme(axis.text.x=element_text(angle=90, size=8, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
       geom_bar(aes(fill=Race), stat = "identity")
       ggplotly(p)
