@@ -119,4 +119,4 @@ The Shiny version is similar for this visualization.
 #**Shiny Application**
 Our visualizations are published in an application on this account:
 
-https://conneyc.shinyapps.io/finalproject/
+https://kellyjennings.shinyapps.io/finalproject/
