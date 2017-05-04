@@ -43,7 +43,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("hgdata1")
                 ),
-                tabPanel("Histogram1: Avg Age of Mother", "Count of average age of mother for selected races, Red line is avg age of mother for selected race", plotlyOutput("hgplot1", height=700))
+                tabPanel("Histogram1: Avg Age of Mother", "Count of average age of mother for selected races, Red line is avg age of mother for each race", plotlyOutput("hgplot1", height=500))
               )
       ),
       tabItem(tabName = "scatterplots",

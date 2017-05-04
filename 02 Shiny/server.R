@@ -138,7 +138,7 @@ shinyServer(function(input, output) {
         dplyr::filter(Race %in% input$selectedRaces | input$selectedRaces == "All") 
       #View(df)
     }
-    tdf1 = df %>% group_by(Race) %>% summarize(avg_age_mother = mean(Average_Age_Mother))
+    tdf1 = df %>% dplyr::group_by(Race) %>% dplyr::summarize(avg_age_mother = mean(Average_Age_Mother))
     dplyr::inner_join(df, tdf1, by = "Race")
   })
   output$hgdata1 <- renderDataTable({DT::datatable(hgdf1(), rownames = FALSE,
@@ -148,6 +148,7 @@ shinyServer(function(input, output) {
   output$hgplot1 <- renderPlotly({ p <- ggplot(hgdf1(), aes(x=Average_Age_Mother)) +
       theme(axis.text.x=element_text(angle=0, size=12, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
+      facet_wrap(~Race, ncol=1) + 
       geom_histogram(aes(x=Average_Age_Mother), binwidth=0.5) +
       geom_vline(aes(xintercept = avg_age_mother), color = "red")
       ggplotly(p)
@@ -397,7 +398,7 @@ shinyServer(function(input, output) {
         dplyr::group_by(State, Race) %>% 
         dplyr::summarize(avg_b = mean(Average_Birth_Weight)) # %>% View()
     }
-    tdf1 = tdf %>% group_by(State) %>% summarize(window_avg_b = mean(avg_b))
+    tdf1 = tdf %>% dplyr::group_by(State) %>% dplyr::summarize(window_avg_b = mean(avg_b))
     dplyr::inner_join(tdf, tdf1, by = "State")
   })
   output$bcdata1 <- renderDataTable({DT::datatable(bcdf1(), rownames = FALSE,
@@ -408,9 +409,6 @@ shinyServer(function(input, output) {
       scale_y_continuous(labels = scales::comma) + # no scientific notation
       theme(axis.text.x=element_text(angle=0, size=14, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
-      #scale_y_continuous(limits = c(0, 5000)) +
-      #theme(panel.spacing.x = unit(30, "lines")) +
-      #scale_y_continuous(breaks=c(15,30),minor_breaks=c(10,20,25)) +
       geom_bar(stat = "identity") + 
       facet_wrap(~State, ncol=1) + 
       coord_flip() + 
