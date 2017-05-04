@@ -57,14 +57,6 @@ This is the same data visualization done in Shiny.
 <center>![Histogram Tableau](TreemapDrag.png)</center><br>
 This Treemap displays the count of the average age of mothers for each age in 0.5 bins, by race. It is colored by the count, with the race and average age as text. When the mouse is hovered over a box, it tells you the count number. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the latest while African Americans have them the earliest. 
 
-<center>![Histogram Shiny](histogramnatives.png)</center><br>
-Natives
-<center>![Histogram Shiny](histogramasian.png)</center><br>
-Asian/Pacific Islanders
-<center>![Histogram Shiny](histogramblack.png)</center><br>
-African Americans
-<center>![Histogram Shiny](histogramwhite.png)</center><br>
-White
 These Shiny histograms show the same result as the Tableau treemap, with the addition of a vertical average line for the average average-median-age for each race. The average line is close to the highest bar for each race except African American, where the average line is about a year later than the most common average-median-age.
 
 <hr>
