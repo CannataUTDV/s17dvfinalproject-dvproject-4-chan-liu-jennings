@@ -57,7 +57,7 @@ This is the same data visualization done in Shiny.
 <center>![Histogram Tableau](TreemapDrag.png)</center><br>
 This Treemap displays the count of states that fall in each average age for mothers (in 0.5 bins), by race. The graph reveals the most common to least common age for giving birth in each race. Boxes are colored by the count, with the race, and average age, and count number as text. For Asians, it is seen that most mothers are 30.5 years old, white mothers are 28, African Americas are 26, and Natives are 26.5. Asian mothers have babies the latest while African Americans have them the earliest. 
 
-<center>![Histogram Tableau](TreemapDrag.png)</center><br>
+<center>![Histogram Shiny](shinyhistogram1.png)</center><br>
 
 This faceted Shiny histogram is similar to the Tableau treeplot, since it shows the most common average mother age for each race. However, it also includes a red average line for each race, so you can easily see that the average age of mother is highest for Asian mothers and lowest for African Americans.
 
@@ -103,20 +103,14 @@ This is the Shiny version. The states chosen are states in the deep south, and t
 
 <center>![High and Low Median Age States Tableau](highlowmedianagestates.png)</center><br>
 This graph used data from Census2015 (Median Age) and Natality (Births, Race) joined by State.
-It shows the sum of births in the 7 Highest and 7 Lowest Median Age States. The red bars are the low median age states while blue are the high ones. Each bar is labeled with their median age. Maine has the highest median age at 43.80 while Utah has the lowest at 30.10 years old. There are low and high birth numbers in both the high and low median age states, so there isn't an apparent direct correlation between median age and the number of births. However, California and Texas as low median age states have the highest birth numbers; in total the low median age states have a larger sum of births than the high median age states.
+It shows the sum of births in the 7 Highest and 7 Lowest Median Age States. The red bars are the low median age states while blue are the high ones. Each bar is labeled with their median age. Maine has the highest median age at 43.80 while Utah has the lowest at 30.10 years old. There are low and high birth numbers in both the high and low median age states, so there isn't an apparent direct correlation between median age and the number of births. However, it is interesting that California and Texas as low median age states have the highest birth numbers; in total the low median age states have a larger sum of births than the high median age states.
 
-<center>![Bar Chart Shiny2](highlowmedianagestates.png)</center><br>
-The Shiny version is the same for this visualization.
+<center>![Bar Chart Shiny2](shinybarchart2.png)</center><br>
+The Shiny version is similar for this visualization.
 
 <hr>
 
 #**Shiny Application**
-Our visualizations are published in an application on our accounts:
+Our visualizations are published in an application on this account:
 
 https://kellyjennings.shinyapps.io/finalproject/
-
-https://conneyc.shinyapps.io/finalproject/
-
-https://cliu42.shinyapps.io/finalproject/
-
-

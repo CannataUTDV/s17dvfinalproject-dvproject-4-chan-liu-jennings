@@ -131,7 +131,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("bcdata3")
                 ),
-                tabPanel("Barchart3: # of Births in High Median Age States", "Number of births by race for the high median_age states", plotlyOutput("bcplot3", height=700))
+                tabPanel("Barchart3: # of Births in High and Low Median Age States", "Number of births by race for the high and low median_age states", plotOutput("bcplot3", height=700))
                 
               )
       )

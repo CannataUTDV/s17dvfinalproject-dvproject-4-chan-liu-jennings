@@ -472,15 +472,17 @@ shinyServer(function(input, output) {
   bcdf3 <- eventReactive(input$bcclick3, {
     if(bconline3() == "SQL") {
       #print("Getting from data.world")
-      query(
+      df = query(
         data.world(propsfile = "www/.data.world"),
         dataset="conneyc/s-17-dv-project-5", type="sql",
-        query="select Births, Race, AreaName as state, avg(Median_Age) as avg_medage
+        query="select AreaName as state, Births, Median_Age,
+        case
+        when Median_Age <= 35.8 then 'Low'
+        else 'High'
+        end AS med_age
         from Natality n join Census2015 c 
         on n.State = c.AreaName
-        where Median_Age >= 40
-        group by Births, Race, AreaName
-        order by Births, Race, AreaName"
+        where Median_Age >= 40 or Median_Age <= 35.8"
       ) # %>% View()
     }
     else {
@@ -490,22 +492,24 @@ shinyServer(function(input, output) {
       file_path2 = "www/Census2015.csv"
       dfc <- readr::read_csv(file_path2)
       df <- dplyr::left_join(dfn, dfc, by = c("State"="AreaName"))
-      df %>%
-        dplyr::group_by(Births, Race, state = State) %>% 
-        dplyr::filter(Median_Age >= 40) %>%
-        dplyr::summarize(avg_medage = mean(Median_Age)) # %>% View()
+      df <- df %>%
+        dplyr::select(state = State, Births, Median_Age) %>% 
+        dplyr::filter(Median_Age >= 40 | Median_Age <= 35.8) %>%
+        dplyr::mutate(med_age = if_else(Median_Age <= 35.8, "Low", "High"))
     }
+    tdf1 = df %>% dplyr::group_by(state) %>% dplyr::summarize(sum_births = sum(Births))
+    tdf1 = dplyr::inner_join(df, tdf1, by = "state")
   })
   output$bcdata3 <- renderDataTable({DT::datatable(bcdf3(), rownames = FALSE,
                                                  extensions = list(Responsive = TRUE, FixedHeader = TRUE)
   )
   })
-  output$bcplot3 <- renderPlotly({p <- ggplot(bcdf3(), aes(x=state, y=Births)) +
+  output$bcplot3 <- renderPlot({ggplot(bcdf3(), aes(x=state, y=sum_births)) +
       scale_y_continuous(labels = scales::comma) + # no scientific notation
-      theme(axis.text.x=element_text(angle=90, size=8, vjust=0.5)) + 
+      theme(axis.text.x=element_text(angle=90, size=12, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=12, hjust=0.5)) +
-      geom_bar(aes(fill=Race), stat = "identity")
-      ggplotly(p)
+      geom_bar(aes(fill=med_age), stat = "identity") +
+      geom_text(mapping=aes(x=state, y=sum_births, label=Median_Age), angle = 90, size=5, colour="black", hjust = -2)
   })
   
   # End Barchart3 Tab ___________________________________________________________
