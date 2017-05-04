@@ -101,6 +101,12 @@ This is the Shiny version. The states chosen are states in the deep south, and t
 
 <hr>
 
+<center>![High and Low Median Age States Tableau](medianstates.png)</center><br>
+We created a set called high median age, which are the states with a median age of over 40. We created another set called low median age which are states with a median age of 35.8 and under. This graph mapped those two sets of states. We observed that the high median age states are all in the east coast while the low median age states tend to be in the central and western US. 
+
+
+<hr>
+
 <center>![High and Low Median Age States Tableau](highlowmedianagestates.png)</center><br>
 This graph used data from Census2015 (Median Age) and Natality (Births, Race) joined by State.
 It shows the sum of births in the 7 Highest and 7 Lowest Median Age States. The red bars are the low median age states while blue are the high ones. Each bar is labeled with their median age. Maine has the highest median age at 43.80 while Utah has the lowest at 30.10 years old. There are low and high birth numbers in both the high and low median age states, so there isn't an apparent direct correlation between median age and the number of births. However, it is interesting that California and Texas as low median age states have the highest birth numbers; in total the low median age states have a larger sum of births than the high median age states.
@@ -113,4 +119,4 @@ The Shiny version is similar for this visualization.
 #**Shiny Application**
 Our visualizations are published in an application on this account:
 
-https://kellyjennings.shinyapps.io/finalproject/
+https://conneyc.shinyapps.io/finalproject/
