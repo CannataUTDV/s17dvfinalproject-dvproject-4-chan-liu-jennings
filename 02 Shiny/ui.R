@@ -87,7 +87,7 @@ dashboardPage(
                          hr(), # Add space after button.
                          DT::dataTableOutput("ctdata2")
                 ),
-                tabPanel("CrossTab2: 4 Highest Birth Weight States", "This graph shows average birth weight per state by race for the 4 highest birth weight states. It is colored by the calculated field (KPI): AVG(average birth weight)/4000", plotlyOutput("ctplot2", height=1000)),
+                tabPanel("CrossTab2: 4 Highest Birth Weight States", "This graph shows average birth weight per state by race for the 4 highest birth weight states. It is colored by the calculated field: AVG(average birth weight)/4000", plotlyOutput("ctplot2", height=1000)),
                 tabPanel("CrosstabData3",  
                          radioButtons("ctrb3", "Get data from:",
                                       c("SQL" = "SQL",

@@ -231,10 +231,10 @@ shinyServer(function(input, output) {
         avg(Average_Birth_Weight) / 4000 as ratio,
         
         case
-        when avg(Average_Birth_Weight) / 4000 < ? then 'Low'
-        when avg(Average_Birth_Weight) / 4000 < ? then 'Medium'
-        else 'High'
-        end AS kpi
+        when avg(Average_Birth_Weight) / 4000 < ? then '01Low'
+        when avg(Average_Birth_Weight) / 4000 < ? then '02Medium'
+        else '03High'
+        end AS avg_birth_weightover4000
         
         from Natality
         group by Race, State
@@ -250,8 +250,8 @@ shinyServer(function(input, output) {
         dplyr::group_by(Race, State) %>% 
         dplyr::summarize(avg_bw = mean(Average_Birth_Weight),
                          ratio = mean(Average_Birth_Weight) / 4000,
-                         kpi = if_else(ratio <= KPI_Low1(), 'Low',
-                                       if_else(ratio <= KPI_Medium1(), 'Medium', 'High'))) # %>% View()
+                         avg_birth_weightover4000 = if_else(ratio <= KPI_Low1(), '01Low',
+                                       if_else(ratio <= KPI_Medium1(), '02Medium', '03High'))) # %>% View()
     }
   })
   output$ctdata1 <- renderDataTable({DT::datatable(ctdf1(), rownames = FALSE,
@@ -262,7 +262,7 @@ shinyServer(function(input, output) {
       theme(axis.text.x=element_text(angle=90, size=8, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=11, hjust=0.5)) +
       geom_text(aes(x=Race, y=State, label=avg_bw), size=3) +
-      geom_tile(aes(x=Race, y=State, fill=kpi), alpha=0.50)
+      geom_tile(aes(x=Race, y=State, fill=avg_birth_weightover4000), alpha=0.50)
       ggplotly(p)
   })
   
@@ -282,10 +282,10 @@ shinyServer(function(input, output) {
         avg(Average_Birth_Weight) / 4000 as ratio,
         
         case
-        when avg(Average_Birth_Weight) / 4000 < ? then 'Low'
-        when avg(Average_Birth_Weight) / 4000 < ? then 'Medium'
-        else 'High'
-        end AS kpi
+        when avg(Average_Birth_Weight) / 4000 < ? then '01Low'
+        when avg(Average_Birth_Weight) / 4000 < ? then '02Medium'
+        else '03High'
+        end AS avg_birth_weightover4000
         
         from Natality
         where
@@ -305,8 +305,8 @@ shinyServer(function(input, output) {
         dplyr::group_by(Race, State) %>% 
         dplyr::summarize(avg_bw = mean(Average_Birth_Weight),
                          ratio = mean(Average_Birth_Weight) / 4000,
-                         kpi = if_else(ratio <= KPI_Low2(), 'Low',
-                                       if_else(ratio <= KPI_Medium2(), 'Medium', 'High'))) # %>% View()
+                         avg_birth_weightover4000 = if_else(ratio <= KPI_Low2(), '01Low',
+                                       if_else(ratio <= KPI_Medium2(), '02Medium', '03High'))) # %>% View()
     }
   })
   output$ctdata2 <- renderDataTable({DT::datatable(ctdf2(), rownames = FALSE,
@@ -317,7 +317,7 @@ shinyServer(function(input, output) {
       theme(axis.text.x=element_text(angle=90, size=11, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=11, hjust=0.5)) +
       geom_text(aes(x=Race, y=State, label=avg_bw), size=3) +
-      geom_tile(aes(x=Race, y=State, fill=kpi), alpha=0.50)
+      geom_tile(aes(x=Race, y=State, fill=avg_birth_weightover4000), alpha=0.50)
       ggplotly(p)
   })
   
@@ -335,10 +335,10 @@ shinyServer(function(input, output) {
         sum(Births) as sum_b, Median_Age,
         
         case
-        when avg(Median_Age) < ? then 'Low'
-        when avg(Median_Age) < ? then 'Medium'
-        else 'High'
-        end AS kpi
+        when avg(Median_Age) < ? then '01Low'
+        when avg(Median_Age) < ? then '02Medium'
+        else '03High'
+        end AS avg_med_age
         
         from Natality n join Census2015 c 
         on n.State = c.AreaName
@@ -358,8 +358,8 @@ shinyServer(function(input, output) {
         dplyr::group_by(Race, State, Median_Age) %>% 
         dplyr::summarize(sum_b = sum(Births),
                          ratio = mean(Median_Age),
-                         kpi = if_else(ratio <= KPI_Low3(), 'Low',
-                                       if_else(ratio <= KPI_Medium3(), 'Medium', 'High'))) # %>% View()
+                         avg_med_age = if_else(ratio <= KPI_Low3(), '01Low',
+                                       if_else(ratio <= KPI_Medium3(), '02Medium', '03High'))) # %>% View()
     }
   })
   output$ctdata3 <- renderDataTable({DT::datatable(ctdf3(), rownames = FALSE,
@@ -370,7 +370,7 @@ shinyServer(function(input, output) {
       theme(axis.text.x=element_text(angle=90, size=11, vjust=0.5)) + 
       theme(axis.text.y=element_text(size=11, hjust=0.5)) +
       geom_text(aes(x=Race, y=State, label=sum_b), size=3) +
-      geom_tile(aes(x=Race, y=State, fill=kpi), alpha=0.50)
+      geom_tile(aes(x=Race, y=State, fill=avg_med_age), alpha=0.50)
       ggplotly(p)
   })
   
